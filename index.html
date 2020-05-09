@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="brython.js"></script>
+<script type="text/javascript" src="brython_stdlib.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body onload="brython(1)">
+<script type="text/python">
+    from browser import document, html, timer
+    from time import sleep
+
+    element = document["data-type-prompt"]
+    prompts = ["Patience", "Determination", "Consistency"]
+    
+    def update_letter(letter):
+      element <= html.B(f"{letter}")
+
+    for prompt in prompts:
+        element <= html.B(f'<br>')
+        for letter in prompt:
+          timer.set_timeout(update_letter(letter), 220)
+</script>
+
+<div>
+    <h1>The key is...</h1>
+    <span id="data-type-prompt" data-type-prompt></span>
+</div>
+
+</body>
+
+</html>

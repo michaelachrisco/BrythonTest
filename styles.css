@@ -1,0 +1,38 @@
+body {
+    background-color: #000;
+    color: #ABE8E7;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  div span::after {
+    content: "|";
+    animation: blinkin 0.6s infinite;
+  }
+  
+  @keyframes blinkin {
+    0% {
+      background-color: #ABE8E7;
+    }
+  
+    40% {
+      background-color: #ABE8E7;
+    }
+  
+    80% {
+      background-color: transparent;
+      color: transparent;
+    }
+  
+    100% {
+      background-color: transparent;
+      color: transparent;
+    }
+  }
+  
